@@ -6,14 +6,13 @@
 
 计划变更如下:
   - [x] 在 internal/logic/conf 与 internal/job/conf 中增加 nats 的连接配置项, 与 选择 kafka ( 默认) 或 nats 的开关配置项
-
   - [x] 把 internal/logic/dao 抽象为 interface , 同时支持 kafka / nats ( 仅是 nats )
-
   - [ ] ~~把 internal/job 中 func (j *Job) Consume() 函数拆分为  func (j *Job) Consume() 支持 kafka / func (j *Job) ConsumeNats()  支持 nats~~
-
   - [x] 把 internal/job 中 func (j *Job) Consume() 抽取为 interface 支持 nats
-
   - [x] 修改 job / logic 配置项,  从 toml 文件中读取 Nats 开关项与连接配置
+  - [x] 抽离 job / comet 中有关 bilibili/discovery 相关调用代码, 以便更换
+  - [ ] 计划增加聊天消息存储接口, 提供消息离线存储与聊天机器人对接用
+  - [ ] 计划处理离线消息独立存储( 或加离线标识, 以便用户上线时重新获取)
   - [ ] 测试, 测试, 测试
 
 除以上变更外, 所有代码尽量保持不变
