@@ -4,7 +4,7 @@
 
 
 
-计划变更如下:
+### 计划变更如下:
   - [x] 在 internal/logic/conf 与 internal/job/conf 中增加 nats 的连接配置项, 与 选择 kafka ( 默认) 或 nats 的开关配置项
   - [x] 把 internal/logic/dao 抽象为 interface , 同时支持 kafka / nats ( 仅是 nats )
   - [ ] ~~把 internal/job 中 func (j *Job) Consume() 函数拆分为  func (j *Job) Consume() 支持 kafka / func (j *Job) ConsumeNats()  支持 nats~~
@@ -16,6 +16,15 @@
   - [ ] 测试, 测试, 测试
 
 除以上变更外, 所有代码尽量保持不变
+
+
+
+### 架构与定制建议
+
+![goim-architecture-0](/docs/goim-architecture-0.png)
+
+见这里 [https://github.com/tsingson/goim/wiki/Customization-(chinese-version)](https://github.com/tsingson/goim/wiki/Customization-(chinese-version))
+
 
 以上, 祝愉快.
 
