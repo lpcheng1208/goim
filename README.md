@@ -1,6 +1,7 @@
 # Change Plan 变更计划
 
-[![Build Status](https://cloud.drone.io/api/badges/tsingson/goim/status.svg)](https://cloud.drone.io/tsingson/goim)
+[![Build Status](https://cloud.drone.io/api/badges/tsingson/goim/status.svg)](https://cloud.drone.io/tsingson/goim)  
+[![GoDoc](https://godoc.org/github.com/tsingson/goim?status.svg)](https://godoc.org/github.com/tsingson/goim)
 
 有几位朋友私信沟通闲聊, 想要一个同时支持 kafka / nats , 以便 merge 原有代码, 我 fork 了一个 repo 来尝试实现这个想法, 这里 https://github.com/tsingson/goim, 在将来几天内处理完成
 

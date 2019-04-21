@@ -1,3 +1,4 @@
+// Package logger provides log interface to replace github.com/golang/glog
 package logger
 
 type Logger interface {
