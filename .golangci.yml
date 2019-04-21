@@ -1,0 +1,6 @@
+# https://github.com/golangci/golangci/wiki/Configuration
+
+service:
+  project-path: github.com/tsingson/goim
+  prepare:
+    - go mod tidy
