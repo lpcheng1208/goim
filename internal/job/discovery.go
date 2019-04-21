@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Bilibili/discovery/naming"
+	"github.com/bilibili/discovery/naming"
 	log "github.com/golang/glog"
 
 	"github.com/Terry-Mao/goim/internal/job/conf"
@@ -28,7 +28,7 @@ func WatchComet(j *Job, cfg *conf.DiscoveryConfig) {
 			panic("WatchComet init failed")
 		}
 		if ins, ok := resolver.Fetch(); ok {
-			if err := newAddress(j, ins); err != nil {
+			if err := newAddress(j, ins.Instances); err != nil {
 				panic(err)
 			}
 			log.Infof("WatchComet init newAddress:%+v", ins)
@@ -44,7 +44,7 @@ func WatchComet(j *Job, cfg *conf.DiscoveryConfig) {
 			}
 			ins, ok := resolver.Fetch()
 			if ok {
-				if err := newAddress(j, ins); err != nil {
+				if err := newAddress(j, ins.Instances); err != nil {
 					log.Errorf("WatchComet newAddress(%+v) error(%+v)", ins, err)
 					continue
 				}

@@ -3,7 +3,6 @@ module github.com/Terry-Mao/goim
 go 1.12
 
 require (
-	github.com/Bilibili/discovery v0.0.0-20181031105343-06a9e867cd84
 	github.com/BurntSushi/toml v0.3.1
 	github.com/Shopify/sarama v1.22.0
 	github.com/bilibili/discovery v1.0.1
