@@ -3,4 +3,4 @@
 service:
   project-path: github.com/tsingson/goim
   prepare:
-    - go mod tidy
+    - GO111MODULE=1 go mod tidy
