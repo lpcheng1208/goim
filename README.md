@@ -3,7 +3,11 @@
 [![Build Status](https://cloud.drone.io/api/badges/tsingson/goim/status.svg)](https://cloud.drone.io/tsingson/goim)  [![GoDoc](https://godoc.org/github.com/tsingson/goim?status.svg)](https://godoc.org/github.com/tsingson/goim)
 
 >
+>
+>
 >  有个 slack 频道, 不少朋友在交流 goim , 欢迎加入[slack #goim](https://join.slack.com/t/reading-go/shared_invite/enQtMjgwNTU5MTE5NjgxLTA5NDQwYzE4NGNhNDI3N2E0ZmYwOGM2MWNjMDUyNjczY2I0OThiNzA5ZTk0MTc1MGYyYzk0NTA0MjM4OTZhYWE)
+>
+>
 >
 
 
