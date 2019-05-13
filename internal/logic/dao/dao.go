@@ -9,6 +9,12 @@ import (
 	"github.com/Terry-Mao/goim/internal/logic/conf"
 )
 
+// PushMsg  interface for kafka / nats
+type PushMsg interface {
+	PublishMessage(topic, ackInbox string, key string, msg []byte) error
+	Close() error
+}
+
 // Dao dao.
 type Dao struct {
 	c           *conf.Config

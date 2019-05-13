@@ -64,6 +64,9 @@ type Config struct {
 	Room      *Room            `json:"room"`
 }
 
+// JobConfig configuration for job
+type JobConfig = Config
+
 // DiscoveryConfig discovery configures.
 type DiscoveryConfig struct {
 	Nodes  []string

@@ -34,6 +34,7 @@ func main() {
 		Env:    conf.Conf.Discovery.Env,
 		Host:   conf.Conf.Discovery.Host,
 	}
+
 	dis := naming.New(cfgNaming)
 	resolver.Register(dis)
 	// job

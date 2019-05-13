@@ -20,7 +20,7 @@ type Job struct {
 }
 
 // New new a push job.
-func New(c *conf.Config) *Job {
+func New(c *conf.JobConfig) *Job {
 	j := &Job{
 		c: c,
 		// 	consumer: newKafkaSub(c.Kafka),
