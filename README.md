@@ -2,63 +2,39 @@
 
 [![Build Status](https://cloud.drone.io/api/badges/tsingson/goim/status.svg)](https://cloud.drone.io/tsingson/goim)  [![GoDoc](https://godoc.org/github.com/tsingson/goim?status.svg)](https://godoc.org/github.com/tsingson/goim)
 
->
-> ********************************
->
->  有个 slack 频道, 70+位朋友在交流 goim , 欢迎加入[slack #goim](https://join.slack.com/t/reading-go/shared_invite/enQtMjgwNTU5MTE5NjgxLTA5NDQwYzE4NGNhNDI3N2E0ZmYwOGM2MWNjMDUyNjczY2I0OThiNzA5ZTk0MTc1MGYyYzk0NTA0MjM4OTZhYWE)
->
-> ********************************
->
+>********************************
+> 
+> goim 文章系列(共5篇):
+> * [goim 架构与定制](https://juejin.im/post/5cbb9e68e51d456e51614aab)
+> * [从goim定制, 浅谈 golang 的 interface 解耦合与gRPC](https://juejin.im/post/5cbd380c5188250a97133649)
+> * [goim中的 bilibili/discovery (eureka)基本概念及应用](https://juejin.im/post/5cc10b086fb9a0323c526bb0)
+> * [goim 的 data flow 数据流](https://juejin.im/post/5cd12fa16fb9a0320b40ec32)
+> * [goim的业务集成(分享会小结与QA)](https://juejin.im/post/5cf27f8ee51d45775e33f50c)
+> 
+>  
+>有个 slack 频道, 70+位朋友在交流 goim , 欢迎加入[slack #goim](https://join.slack.com/t/reading-go/shared_invite/enQtMjgwNTU5MTE5NjgxLTA5NDQwYzE4NGNhNDI3N2E0ZmYwOGM2MWNjMDUyNjczY2I0OThiNzA5ZTk0MTc1MGYyYzk0NTA0MjM4OTZhYWE)
+>  
+>********************************
+> 
 
 
-有几位朋友私信沟通闲聊, 想要一个同时支持 kafka / nats , 以便 merge 原有代码, 我 fork 了一个 repo 来尝试实现这个想法, 这里 https://github.com/tsingson/goim, 在将来几天内处理完成
+有几位朋友私信沟通闲聊, 想要一个同时支持 kafka / nats , 以便 merge 原有代码, 我 fork 了一个 repo 来尝试实现这个想法, 这里 https://github.com/tsingson/goim, 在这个代码尝试基础上, 与很多朋友交流/争论/碰撞…..结果,就写了一些小文章, 在上面
 
 
 
 ### 计划变更如下:
   - [x] 在 internal/logic/conf 与 internal/job/conf 中增加 nats 的连接配置项, 与 选择 kafka ( 默认) 或 nats 的开关配置项
   - [x] 把 internal/logic/dao 抽象为 interface , 同时支持 kafka / nats ( 仅是 nats )
-  - [ ] ~~把 internal/job 中 func (j *Job) Consume() 函数拆分为  func (j *Job) Consume() 支持 kafka / func (j *Job) ConsumeNats()  支持 nats~~
   - [x] 把 internal/job 中 func (j *Job) Consume() 抽取为 interface 支持 nats
   - [x] 修改 job / logic 配置项,  从 toml 文件中读取 Nats 开关项与连接配置
-  - [x] 抽离 job / comet 中有关 bilibili/discovery 相关调用代码, 以便更换
-  - [ ] ~~计划增加聊天消息存储接口, 提供消息离线存储与聊天机器人对接用~~
-  - [ ] ~~计划处理离线消息独立存储( 或加离线标识, 以便用户上线时重新获取)~~
-  - [ ] 测试, 测试, 测试
+
+    
 
 除以上变更外, 所有代码尽量保持不变
 
 
 
-### 架构与定制建议
-
-![goim-architecture-0](/docs/goim-architecture-0.png)
-
-见这里 [https://github.com/tsingson/goim/wiki/Customization-(chinese-version)](https://github.com/tsingson/goim/wiki/Customization-(chinese-version))
-
-
-以上, 祝愉快.
-
-----------------
-
-Some friends ask to [https://github.com/Terry-Mao/goim](https://github.com/Terry-Mao/goim) support the kafka / nats. 
-I forked a repo to try to implement this idea, here https://github.com/tsingson/goim, Completed in few days
-
-
-
-The plan  are:
-
-   - [x] Add nats connection configuration in internal/logic/conf and internal/job/conf, and switch configuration for kafka (default) or nats
-   - [x] Abstract internal/logic/dao as interface to support kafka / nats (only nats, no liftbridge )
-
-   - [ ] ~~Split the func (j *Job) Consume() function in internal/job into func (j *Job) Consume() Support kafka ( default) / func (j *Job) ConsumeNats() Support nats~~
-  - [x] Split the  func (j *Job) Consume() function in internal/job into interface , to support kafka / nats 
-  - [x] add nats switch setting and nats client connect setting , modify  job / logic read configuration from toml file 
-  - [ ] testing, more testing 
-
-it's all.
-
-ps, wish you happiness.
+ 
 
 
 
@@ -170,3 +146,4 @@ iOS: [iOS](https://github.com/roamdy/goim-oc-sdk)
 
 ## LICENSE
 goim is is distributed under the terms of the MIT License.
+
